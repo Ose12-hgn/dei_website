@@ -1,357 +1,245 @@
-<!-- HOME PAGE HERO SECTION -->
-<div class="bg-gradient-to-b from-orange-50 to-white px-6 py-16 md:py-24">
-    <div class="mx-auto max-w-6xl">
-        <div class="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
-            <!-- Left Content -->
-            <div>
-                <h1 class="text-4xl font-bold text-gray-900 md:text-5xl">
-                    Find <span class="text-orange-500">Affordable</span> Food Near You
-                </h1>
-                <p class="mt-4 text-lg text-gray-600">
-                    A culinary guide helping migrants and travelers discover authentic local flavors without breaking the bank. Your digital kitchen table awaits.
+<x-layouts::app :title="__('Home')">
+    <div class="bg-[#f8f2ea] text-[#1f1a17]">
+        <section class="mx-auto max-w-7xl px-6 py-10 lg:py-16">
+            <div class="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+                <div>
+                    <p class="text-sm font-semibold uppercase tracking-[0.28em] text-[#b46a1c]">Culinary Atelier</p>
+                    <h1 class="mt-4 max-w-2xl text-5xl font-black leading-[0.95] tracking-tight sm:text-6xl">
+                        Find <span class="text-[#b46a1c]">Affordable</span> Food Near You
+                    </h1>
+                    <p class="mt-5 max-w-xl text-lg leading-8 text-[#5d5248]">
+                        A sensory guide helping migrants and travelers discover authentic local flavors without breaking the bank. Your digital kitchen table awaits.
+                    </p>
+
+                    <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+                        <label class="flex min-w-0 flex-1 items-center gap-3 rounded-full border border-[#eadbc9] bg-white px-4 py-3 shadow-sm">
+                            <span class="text-[#b46a1c]">⌖</span>
+                            <span class="text-sm text-[#8c7f72]">Where are you eating?</span>
+                        </label>
+                        <label class="flex items-center gap-3 rounded-full border border-[#eadbc9] bg-white px-4 py-3 shadow-sm sm:w-[180px]">
+                            <span class="text-[#b46a1c]">$</span>
+                            <span class="text-sm text-[#8c7f72]">Budget</span>
+                        </label>
+                        <button class="rounded-full bg-[#b46a1c] px-7 py-3 font-semibold text-white shadow-lg shadow-[#b46a1c]/25 transition hover:bg-[#9f5d17]">
+                            Search
+                        </button>
+                    </div>
+                </div>
+
+                <div class="grid gap-4 sm:grid-cols-2">
+                    {{-- Put your image here: public/images/home/hero-dish-1.jpg --}}
+                    <div class="relative h-72 overflow-hidden rounded-4xl bg-linear-to-br from-[#d9a066] via-[#b35d1f] to-[#6b2f12] shadow-xl shadow-[#d7aa7b]/30">
+                        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.2),transparent_35%)]"></div>
+                        <div class="absolute inset-0 flex items-end p-5">
+                            <div class="rounded-2xl bg-black/35 px-3 py-2 text-xs font-semibold text-white backdrop-blur">
+                                Add photo at public/images/home/hero-dish-1.jpg
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- Put your image here: public/images/home/hero-dish-2.jpg --}}
+                    <div class="relative mt-8 h-64 overflow-hidden rounded-4xl bg-linear-to-br from-[#fff4dd] via-[#f0d69b] to-[#d9a44f] shadow-xl shadow-[#d7aa7b]/30 sm:mt-0">
+                        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.45),transparent_40%)]"></div>
+                        <div class="absolute inset-0 flex items-end p-5">
+                            <div class="rounded-2xl bg-black/35 px-3 py-2 text-xs font-semibold text-white backdrop-blur">
+                                Add photo at public/images/home/hero-dish-2.jpg
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-[#f4ece2] px-6 py-16">
+            <div class="mx-auto max-w-7xl">
+                <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                    <div>
+                        <h2 class="text-3xl font-black tracking-tight text-[#1f1a17]">Curated Recommendations</h2>
+                        <p class="mt-2 max-w-2xl text-sm leading-6 text-[#6c5f55]">
+                            End-picked spots known for exceptional quality and migrant-friendly pricing.
+                        </p>
+                    </div>
+                    <a href="#" class="font-semibold text-[#b46a1c]">View all</a>
+                </div>
+
+                <div class="mt-10 grid gap-6 md:grid-cols-3">
+                    @foreach ([
+                        ['name' => 'Saigon Street Eats', 'price' => '$7.50', 'caption' => 'Authentic family recipes passed down through generations.', 'image' => 'public/images/home/reco-1.jpg'],
+                        ['name' => 'Abyssinia House', 'price' => '$12.00', 'caption' => 'A communal dining experience featuring hand-stretched injera.', 'image' => 'public/images/home/reco-2.jpg'],
+                        ['name' => 'Patagonia Pantry', 'price' => '$4.00', 'caption' => 'The best flaky empanadas in town. Perfect for a quick bite.', 'image' => 'public/images/home/reco-3.jpg'],
+                    ] as $card)
+                        <article class="overflow-hidden rounded-3xl bg-white shadow-[0_10px_30px_rgba(81,58,35,0.08)] ring-1 ring-black/5">
+                            <div class="relative h-56 overflow-hidden bg-[#d9c6af]">
+                                {{-- Put your image here: {{ $card['image'] }} --}}
+                                <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.5),transparent_45%)]"></div>
+                                <div class="absolute inset-x-0 bottom-0 p-4">
+                                    <div class="rounded-2xl bg-black/35 px-3 py-2 text-xs font-semibold text-white backdrop-blur">
+                                        Add photo at {{ $card['image'] }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-5">
+                                <div class="flex items-start justify-between gap-4">
+                                    <h3 class="text-lg font-bold text-[#1f1a17]">{{ $card['name'] }}</h3>
+                                    <span class="shrink-0 text-sm font-bold text-[#b46a1c]">{{ $card['price'] }}</span>
+                                </div>
+                                <p class="mt-3 text-sm leading-6 text-[#6d6056]">{{ $card['caption'] }}</p>
+                                <div class="mt-5 flex gap-2">
+                                    <span class="rounded-full bg-[#f6eadc] px-3 py-1 text-xs font-semibold text-[#8a5a2a]">Vegetarian</span>
+                                    <span class="rounded-full bg-[#f6eadc] px-3 py-1 text-xs font-semibold text-[#8a5a2a]">Budget friendly</span>
+                                </div>
+                            </div>
+                        </article>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 py-16">
+            <div class="mx-auto max-w-7xl">
+                <h2 class="text-center text-3xl font-black tracking-tight text-[#1f1a17]">The Simple Path to Flavor</h2>
+                <div class="mt-14 grid gap-8 md:grid-cols-3">
+                    @foreach ([
+                        ['title' => 'Find', 'icon' => '⌕', 'text' => 'Search by location to see what is cooking nearby in your neighborhood.'],
+                        ['title' => 'Filter', 'icon' => '≡', 'text' => 'Adjust your budget and cuisine preferences to find the perfect match.'],
+                        ['title' => 'Feast', 'icon' => '⌘', 'text' => 'Follow the directions and enjoy a high-quality, affordable meal.'],
+                    ] as $step)
+                        <div class="text-center">
+                            <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#f7d7b3] text-2xl text-[#b46a1c] shadow-sm">
+                                {{ $step['icon'] }}
+                            </div>
+                            <h3 class="mt-5 text-xl font-bold text-[#1f1a17]">{{ $step['title'] }}</h3>
+                            <p class="mx-auto mt-3 max-w-sm text-sm leading-6 text-[#6d6056]">{{ $step['text'] }}</p>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-[#f4ece2] px-6 py-16">
+            <div class="mx-auto max-w-7xl">
+                <h2 class="text-3xl font-black tracking-tight text-[#1f1a17]">Trending Tastes</h2>
+                <div class="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
+                    @foreach ([
+                        ['name' => 'Giant Indian Thali', 'label' => 'Top Seller', 'price' => '$9.99', 'image' => 'public/images/home/trending-1.jpg'],
+                        ['name' => 'Crispy Soy-Garlic Chicken', 'label' => 'Must Try', 'price' => '$11.50', 'image' => 'public/images/home/trending-2.jpg'],
+                        ['name' => 'Miso Tonkotsu Ramen', 'label' => 'Popular', 'price' => '$13.00', 'image' => 'public/images/home/trending-3.jpg'],
+                        ['name' => 'Classic Ahi Poke Bowl', 'label' => 'Fresh', 'price' => '$12.50', 'image' => 'public/images/home/trending-4.jpg'],
+                    ] as $item)
+                        <article class="overflow-hidden rounded-3xl bg-white p-3 shadow-[0_10px_30px_rgba(81,58,35,0.08)] ring-1 ring-black/5">
+                            <div class="relative h-40 overflow-hidden rounded-[1.1rem] bg-[#d7c1a9]">
+                                {{-- Put your image here: {{ $item['image'] }} --}}
+                                <div class="absolute inset-0 flex items-end p-3">
+                                    <div class="rounded-2xl bg-black/35 px-3 py-2 text-[11px] font-semibold text-white backdrop-blur">
+                                        Add photo at {{ $item['image'] }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="px-1 pb-1 pt-3">
+                                <div class="flex items-center justify-between gap-3">
+                                    <h3 class="text-sm font-bold text-[#1f1a17]">{{ $item['name'] }}</h3>
+                                    <span class="rounded-full bg-[#f6eadc] px-2.5 py-1 text-[11px] font-semibold text-[#8a5a2a]">{{ $item['label'] }}</span>
+                                </div>
+                                <p class="mt-2 text-xs font-semibold text-[#b46a1c]">{{ $item['price'] }}</p>
+                            </div>
+                        </article>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 py-16">
+            <div class="mx-auto max-w-7xl">
+                <h2 class="text-3xl font-black tracking-tight text-[#1f1a17]">Hidden Gems</h2>
+                <div class="mt-10 grid gap-5 lg:grid-cols-3">
+                    <article class="relative overflow-hidden rounded-[1.75rem] bg-[#5b3416] text-white shadow-[0_18px_40px_rgba(81,58,35,0.18)] lg:col-span-2 lg:row-span-2">
+                        <div class="absolute inset-0 bg-linear-to-t from-black/75 via-black/20 to-transparent"></div>
+                        <div class="absolute inset-0 flex items-end p-6">
+                            <div>
+                                <p class="text-xs font-semibold uppercase tracking-[0.28em] text-[#f5c48a]">Back-alley find</p>
+                                <h3 class="mt-2 text-3xl font-black">Artisan Hearth Bakery</h3>
+                                <p class="mt-3 max-w-md text-sm leading-6 text-white/85">
+                                    Famous for sourdough loaves that cost less than a coffee.
+                                </p>
+                                <p class="mt-4 text-xs text-white/70">Add photo at public/images/home/gem-1.jpg</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    @foreach ([
+                        ['name' => 'Mumbai Express', 'caption' => 'Best vada pav in the tri-state area.', 'image' => 'public/images/home/gem-2.jpg'],
+                        ['name' => 'Classic Diner', 'caption' => 'Comfort food with late-night service.', 'image' => 'public/images/home/gem-3.jpg'],
+                        ['name' => 'Glaze Lab', 'caption' => 'Donuts and pastries with a modern twist.', 'image' => 'public/images/home/gem-4.jpg'],
+                    ] as $gem)
+                        <article class="relative overflow-hidden rounded-[1.35rem] bg-[#d8c2a8] text-white shadow-[0_18px_40px_rgba(81,58,35,0.12)]">
+                            <div class="absolute inset-0 bg-linear-to-t from-black/65 via-black/20 to-transparent"></div>
+                            <div class="absolute inset-0 flex items-end p-5">
+                                <div>
+                                    <h3 class="text-xl font-bold">{{ $gem['name'] }}</h3>
+                                    <p class="mt-1 text-sm text-white/80">{{ $gem['caption'] }}</p>
+                                    <p class="mt-3 text-[11px] text-white/70">Add photo at {{ $gem['image'] }}</p>
+                                </div>
+                            </div>
+                        </article>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 py-14">
+            <div class="mx-auto max-w-4xl rounded-4xl bg-linear-to-br from-[#b86a19] to-[#f29b45] px-8 py-14 text-center shadow-[0_25px_60px_rgba(184,106,25,0.28)]">
+                <h2 class="text-3xl font-black tracking-tight text-white md:text-4xl">Ready to Taste Your Next Adventure?</h2>
+                <p class="mx-auto mt-4 max-w-2xl text-base leading-7 text-white/90">
+                    Join 50,000+ travelers and migrants exploring the best local eats every day.
                 </p>
-                
-                <!-- Search & Filter Section -->
-                <div class="mt-8 flex flex-col gap-4 md:flex-row md:items-center">
-                    <div class="flex items-center gap-2">
-                        <svg class="h-5 w-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"></path>
-                        </svg>
-                        <span class="text-sm text-gray-700">Where are you</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <svg class="h-5 w-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                        <span class="text-sm text-gray-700">Budget $</span>
-                    </div>
-                    <button class="rounded-full bg-orange-500 px-6 py-2 text-white font-semibold hover:bg-orange-600 transition">
-                        Search
-                    </button>
+                <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+                    <a href="#" class="rounded-full bg-white px-6 py-3 font-semibold text-[#b46a1c] shadow-sm transition hover:bg-[#fff7ef]">Sign Up Free</a>
+                    <a href="#" class="rounded-full border border-white/60 px-6 py-3 font-semibold text-white transition hover:bg-white/10">Explore Map</a>
                 </div>
             </div>
+        </section>
 
-            <!-- Right Images -->
-            <div class="grid grid-cols-2 gap-4">
-                <!-- IMAGE PLACEHOLDER 1: Replace with: {{ asset('images/hero-food-1.jpg') }} -->
-                <div class="rounded-2xl bg-gray-200 h-64 overflow-hidden">
-                    <img src="[ADD_IMAGE_PATH_HERE: resources/images/hero-food-1.jpg]" alt="Food" class="w-full h-full object-cover">
+        <footer class="border-t border-[#eadbc9] bg-white px-6 py-12">
+            <div class="mx-auto grid max-w-7xl gap-10 md:grid-cols-4">
+                <div>
+                    <h3 class="text-lg font-black text-[#1f1a17]">Culinary Atelier</h3>
+                    <p class="mt-3 max-w-xs text-sm leading-6 text-[#6d6056]">
+                        Redefining global food discovery for the modern traveler, built for flavor, priced for everyone.
+                    </p>
                 </div>
-                <!-- IMAGE PLACEHOLDER 2: Replace with: {{ asset('images/hero-food-2.jpg') }} -->
-                <div class="rounded-2xl bg-gray-200 h-64 overflow-hidden flex items-center justify-center">
-                    <img src="[ADD_IMAGE_PATH_HERE: resources/images/hero-food-2.jpg]" alt="Food" class="w-full h-full object-cover">
+                <div>
+                    <h4 class="font-bold text-[#1f1a17]">Explore</h4>
+                    <ul class="mt-4 space-y-2 text-sm text-[#6d6056]">
+                        <li><a href="#">Neighborhoods</a></li>
+                        <li><a href="#">Top Rated</a></li>
+                        <li><a href="#">New Spots</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-[#1f1a17]">Resources</h4>
+                    <ul class="mt-4 space-y-2 text-sm text-[#6d6056]">
+                        <li><a href="#">For Migrants</a></li>
+                        <li><a href="#">Traveler Guide</a></li>
+                        <li><a href="#">Partner With Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-[#1f1a17]">Connect</h4>
+                    <div class="mt-4 flex gap-3">
+                        <span class="grid h-9 w-9 place-items-center rounded-full bg-[#f6eadc] text-[#b46a1c]">◎</span>
+                        <span class="grid h-9 w-9 place-items-center rounded-full bg-[#f6eadc] text-[#b46a1c]">@</span>
+                    </div>
                 </div>
             </div>
-        </div>
+            <div class="mx-auto mt-10 flex max-w-7xl flex-col gap-3 border-t border-[#f0e5d8] pt-6 text-xs text-[#8a7c70] sm:flex-row sm:items-center sm:justify-between">
+                <p>© 2026 Culinary Atelier. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Settings</a>
+                </div>
+            </div>
+        </footer>
     </div>
-</div>
-
-<!-- CURATED RECOMMENDATIONS SECTION -->
-<div class="bg-white px-6 py-16 md:py-20">
-    <div class="mx-auto max-w-6xl">
-        <div class="flex items-center justify-between">
-            <div>
-                <h2 class="text-3xl font-bold text-gray-900">Curated Recommendations</h2>
-                <p class="mt-2 text-gray-600">Carefully picked spots known for exceptional quality and integrity based on your preferences</p>
-            </div>
-            <a href="#" class="text-orange-500 font-semibold hover:text-orange-600">View all →</a>
-        </div>
-
-        <!-- Recommendation Cards -->
-        <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
-            <!-- Card 1 -->
-            <div class="rounded-lg overflow-hidden border border-gray-200 hover:shadow-lg transition">
-                <!-- IMAGE PLACEHOLDER 3: Replace with: {{ asset('images/saigon-street-eats.jpg') }} -->
-                <div class="h-48 bg-gray-300 overflow-hidden">
-                    <img src="[ADD_IMAGE_PATH_HERE: resources/images/saigon-street-eats.jpg]" alt="Saigon Street Eats" class="w-full h-full object-cover">
-                </div>
-                <div class="p-4">
-                    <div class="flex items-center justify-between">
-                        <h3 class="text-lg font-semibold text-gray-900">Saigon Street Eats</h3>
-                        <span class="text-orange-500 font-bold">$7.50</span>
-                    </div>
-                    <p class="mt-2 text-sm text-gray-600">Authentic Vietnamese pho and spring rolls in a humble spot. Lively, generous portions, Known for..." </p>
-                    <div class="mt-4 flex gap-2">
-                        <button class="flex-1 rounded-full border border-orange-500 px-4 py-2 text-orange-500 text-sm font-semibold hover:bg-orange-50 transition">
-                            Unrelated
-                        </button>
-                        <button class="flex-1 rounded-full border border-orange-500 px-4 py-2 text-orange-500 text-sm font-semibold hover:bg-orange-50 transition">
-                            Relevant
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="rounded-lg overflow-hidden border border-gray-200 hover:shadow-lg transition">
-                <!-- IMAGE PLACEHOLDER 4: Replace with: {{ asset('images/aleyanna-house.jpg') }} -->
-                <div class="h-48 bg-gray-300 overflow-hidden">
-                    <img src="[ADD_IMAGE_PATH_HERE: resources/images/aleyanna-house.jpg]" alt="Aleyanna House" class="w-full h-full object-cover">
-                </div>
-                <div class="p-4">
-                    <div class="flex items-center justify-between">
-                        <h3 class="text-lg font-semibold text-gray-900">Aleyanna House</h3>
-                        <span class="text-orange-500 font-bold">$12.00</span>
-                    </div>
-                    <p class="mt-2 text-sm text-gray-600">Ethiopian cuisine in a welcoming environment. hand-stretched injera and slow-simmered sauces and recipes...</p>
-                    <div class="mt-4 flex gap-2">
-                        <button class="flex-1 rounded-full border border-orange-500 px-4 py-2 text-orange-500 text-sm font-semibold hover:bg-orange-50 transition">
-                            Unrelated
-                        </button>
-                        <button class="flex-1 rounded-full border border-orange-500 px-4 py-2 text-orange-500 text-sm font-semibold hover:bg-orange-50 transition">
-                            Relevant
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="rounded-lg overflow-hidden border border-gray-200 hover:shadow-lg transition">
-                <!-- IMAGE PLACEHOLDER 5: Replace with: {{ asset('images/patagons-pantry.jpg') }} -->
-                <div class="h-48 bg-gray-300 overflow-hidden">
-                    <img src="[ADD_IMAGE_PATH_HERE: resources/images/patagons-pantry.jpg]" alt="Patagons Pantry" class="w-full h-full object-cover">
-                </div>
-                <div class="p-4">
-                    <div class="flex items-center justify-between">
-                        <h3 class="text-lg font-semibold text-gray-900">Patagons Pantry</h3>
-                        <span class="text-orange-500 font-bold">$4.00</span>
-                    </div>
-                    <p class="mt-2 text-sm text-gray-600">Cozy spot for traditional Latin fare with authentic flavors. Try their empanadas for a quick bite or a full meal.</p>
-                    <div class="mt-4 flex gap-2">
-                        <button class="flex-1 rounded-full border border-orange-500 px-4 py-2 text-orange-500 text-sm font-semibold hover:bg-orange-50 transition">
-                            Unrelated
-                        </button>
-                        <button class="flex-1 rounded-full border border-orange-500 px-4 py-2 text-orange-500 text-sm font-semibold hover:bg-orange-50 transition">
-                            Relevant
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- THE SIMPLE PATH TO FLAVOR SECTION -->
-<div class="bg-white px-6 py-16 md:py-20">
-    <div class="mx-auto max-w-6xl">
-        <h2 class="text-center text-3xl font-bold text-gray-900">The Simple Path to Flavor</h2>
-        
-        <div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
-            <!-- Find Step -->
-            <div class="text-center">
-                <div class="mx-auto mb-4 h-16 w-16 rounded-full bg-orange-100 flex items-center justify-center">
-                    <svg class="h-8 w-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-900">Find</h3>
-                <p class="mt-2 text-gray-600">Search for locations to see what's cooking nearby in your neighborhood</p>
-            </div>
-
-            <!-- Filter Step -->
-            <div class="text-center">
-                <div class="mx-auto mb-4 h-16 w-16 rounded-full bg-orange-100 flex items-center justify-center">
-                    <svg class="h-8 w-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"></path>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-900">Filter</h3>
-                <p class="mt-2 text-gray-600">Adjust your budget and cuisine preferences to find the perfect match</p>
-            </div>
-
-            <!-- Feast Step -->
-            <div class="text-center">
-                <div class="mx-auto mb-4 h-16 w-16 rounded-full bg-orange-100 flex items-center justify-center">
-                    <svg class="h-8 w-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-900">Feast</h3>
-                <p class="mt-2 text-gray-600">Savor the flavors and enjoy a high-quality, affordable meal</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- TRENDING TASTES SECTION -->
-<div class="bg-white px-6 py-16 md:py-20">
-    <div class="mx-auto max-w-6xl">
-        <h2 class="text-3xl font-bold text-gray-900">Trending Tastes</h2>
-        
-        <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-4">
-            <!-- Trending Item 1 -->
-            <div class="group cursor-pointer">
-                <!-- IMAGE PLACEHOLDER 6: Replace with: {{ asset('images/giant-indian-thali.jpg') }} -->
-                <div class="h-48 rounded-lg bg-gray-300 overflow-hidden mb-4">
-                    <img src="[ADD_IMAGE_PATH_HERE: resources/images/giant-indian-thali.jpg]" alt="Giant Indian Thali" class="w-full h-full object-cover group-hover:scale-105 transition">
-                </div>
-                <div class="flex items-center justify-between">
-                    <h3 class="font-semibold text-gray-900">Giant Indian Thali</h3>
-                    <span class="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded">Top Menu</span>
-                </div>
-                <p class="mt-1 text-sm text-gray-600">from $9.99</p>
-            </div>
-
-            <!-- Trending Item 2 -->
-            <div class="group cursor-pointer">
-                <!-- IMAGE PLACEHOLDER 7: Replace with: {{ asset('images/crispy-soy-garlic-chicken.jpg') }} -->
-                <div class="h-48 rounded-lg bg-gray-300 overflow-hidden mb-4">
-                    <img src="[ADD_IMAGE_PATH_HERE: resources/images/crispy-soy-garlic-chicken.jpg]" alt="Crispy Soy Garlic Chicken" class="w-full h-full object-cover group-hover:scale-105 transition">
-                </div>
-                <div class="flex items-center justify-between">
-                    <h3 class="font-semibold text-gray-900">Crispy Soy Garlic Chicken</h3>
-                    <span class="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded">Must Try</span>
-                </div>
-                <p class="mt-1 text-sm text-gray-600">from $11.50</p>
-            </div>
-
-            <!-- Trending Item 3 -->
-            <div class="group cursor-pointer">
-                <!-- IMAGE PLACEHOLDER 8: Replace with: {{ asset('images/miso-tonkotsu-ramen.jpg') }} -->
-                <div class="h-48 rounded-lg bg-gray-300 overflow-hidden mb-4">
-                    <img src="[ADD_IMAGE_PATH_HERE: resources/images/miso-tonkotsu-ramen.jpg]" alt="Miso Tonkotsu Ramen" class="w-full h-full object-cover group-hover:scale-105 transition">
-                </div>
-                <div class="flex items-center justify-between">
-                    <h3 class="font-semibold text-gray-900">Miso Tonkotsu Ramen</h3>
-                    <span class="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded">Popular</span>
-                </div>
-                <p class="mt-1 text-sm text-gray-600">from $13.00</p>
-            </div>
-
-            <!-- Trending Item 4 -->
-            <div class="group cursor-pointer">
-                <!-- IMAGE PLACEHOLDER 9: Replace with: {{ asset('images/classic-art-plate-bbq.jpg') }} -->
-                <div class="h-48 rounded-lg bg-gray-300 overflow-hidden mb-4">
-                    <img src="[ADD_IMAGE_PATH_HERE: resources/images/classic-art-plate-bbq.jpg]" alt="Classic Art Plate BBQ" class="w-full h-full object-cover group-hover:scale-105 transition">
-                </div>
-                <div class="flex items-center justify-between">
-                    <h3 class="font-semibold text-gray-900">Classic Art Plate BBQ</h3>
-                    <span class="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded">Popular</span>
-                </div>
-                <p class="mt-1 text-sm text-gray-600">from $12.50</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- HIDDEN GEMS SECTION -->
-<div class="bg-white px-6 py-16 md:py-20">
-    <div class="mx-auto max-w-6xl">
-        <h2 class="text-3xl font-bold text-gray-900">Hidden Gems</h2>
-        
-        <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
-            <!-- Gem 1 - Large -->
-            <div class="group cursor-pointer md:col-span-1 md:row-span-2">
-                <!-- IMAGE PLACEHOLDER 10: Replace with: {{ asset('images/artisan-heart-bakery.jpg') }} -->
-                <div class="h-full rounded-lg bg-gray-300 overflow-hidden mb-4">
-                    <img src="[ADD_IMAGE_PATH_HERE: resources/images/artisan-heart-bakery.jpg]" alt="Artisan Heart Bakery" class="w-full h-full object-cover group-hover:scale-105 transition">
-                </div>
-                <div class="p-4 absolute bg-black/50 text-white bottom-0 left-0 right-0">
-                    <h3 class="font-semibold">Artisan Heart Bakery</h3>
-                    <p class="text-sm mt-1">Artisanal treats for delightful lunches that cost less than a coffee</p>
-                </div>
-            </div>
-
-            <!-- Gem 2 -->
-            <div class="group cursor-pointer">
-                <!-- IMAGE PLACEHOLDER 11: Replace with: {{ asset('images/humbled-express.jpg') }} -->
-                <div class="h-48 rounded-lg bg-gray-300 overflow-hidden mb-4">
-                    <img src="[ADD_IMAGE_PATH_HERE: resources/images/humbled-express.jpg]" alt="Humbled Express" class="w-full h-full object-cover group-hover:scale-105 transition">
-                </div>
-                <div class="p-3">
-                    <h3 class="font-semibold text-gray-900">Humbled Express</h3>
-                    <p class="text-sm text-gray-600 mt-1">Fried rice this is so great. Very good</p>
-                </div>
-            </div>
-
-            <!-- Gem 3 -->
-            <div class="group cursor-pointer">
-                <!-- IMAGE PLACEHOLDER 12: Replace with: {{ asset('images/classic-doer.jpg') }} -->
-                <div class="h-48 rounded-lg bg-gray-300 overflow-hidden mb-4">
-                    <img src="[ADD_IMAGE_PATH_HERE: resources/images/classic-doer.jpg]" alt="Classic Doer" class="w-full h-full object-cover group-hover:scale-105 transition">
-                </div>
-                <div class="p-3">
-                    <h3 class="font-semibold text-gray-900">Classic Doer</h3>
-                    <p class="text-sm text-gray-600 mt-1">Classic sandwiches and street food</p>
-                </div>
-            </div>
-
-            <!-- Gem 4 -->
-            <div class="group cursor-pointer">
-                <!-- IMAGE PLACEHOLDER 13: Replace with: {{ asset('images/sweet-lab.jpg') }} -->
-                <div class="h-48 rounded-lg bg-gray-300 overflow-hidden mb-4">
-                    <img src="[ADD_IMAGE_PATH_HERE: resources/images/sweet-lab.jpg]" alt="Sweet Lab" class="w-full h-full object-cover group-hover:scale-105 transition">
-                </div>
-                <div class="p-3">
-                    <h3 class="font-semibold text-gray-900">Sweet Lab</h3>
-                    <p class="text-sm text-gray-600 mt-1">Macarons and pastries for sweet indulgence</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- CTA SECTION -->
-<div class="bg-gradient-to-r from-orange-400 to-orange-600 px-6 py-16 md:py-20">
-    <div class="mx-auto max-w-2xl text-center">
-        <h2 class="text-3xl font-bold text-white md:text-4xl">Ready to Taste Your Next Adventure?</h2>
-        <p class="mt-4 text-lg text-orange-50">Join 50,000+ travelers and migrants exploring the best local eats every day</p>
-        
-        <div class="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-            <button class="rounded-full bg-white px-8 py-3 text-orange-600 font-semibold hover:bg-orange-50 transition">
-                Sign Up Free
-            </button>
-            <button class="rounded-full border-2 border-white px-8 py-3 text-white font-semibold hover:bg-white/10 transition">
-                Explore Map
-            </button>
-        </div>
-    </div>
-</div>
-
-<!-- FOOTER SECTION -->
-<footer class="bg-gray-900 px-6 py-12 text-gray-400">
-    <div class="mx-auto max-w-6xl">
-        <div class="grid grid-cols-1 gap-8 md:grid-cols-4">
-            <!-- Brand -->
-            <div>
-                <h3 class="text-lg font-bold text-white">CulinaryMaster</h3>
-                <p class="mt-2 text-sm">Discover authentic local food flavors for every budget.</p>
-            </div>
-
-            <!-- Explore Links -->
-            <div>
-                <h4 class="font-semibold text-white">Explore</h4>
-                <ul class="mt-4 space-y-2">
-                    <li><a href="#" class="hover:text-white transition">Top Eats</a></li>
-                    <li><a href="#" class="hover:text-white transition">New Places</a></li>
-                    <li><a href="#" class="hover:text-white transition">Budget Bites</a></li>
-                </ul>
-            </div>
-
-            <!-- Resources Links -->
-            <div>
-                <h4 class="font-semibold text-white">Resources</h4>
-                <ul class="mt-4 space-y-2">
-                    <li><a href="#" class="hover:text-white transition">Travel Guide</a></li>
-                    <li><a href="#" class="hover:text-white transition">Food Blog</a></li>
-                    <li><a href="#" class="hover:text-white transition">FAQs</a></li>
-                </ul>
-            </div>
-
-            <!-- Connect Links -->
-            <div>
-                <h4 class="font-semibold text-white">Connect</h4>
-                <ul class="mt-4 space-y-2">
-                    <li><a href="#" class="hover:text-white transition">Facebook</a></li>
-                    <li><a href="#" class="hover:text-white transition">Instagram</a></li>
-                    <li><a href="#" class="hover:text-white transition">Twitter</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="mt-8 border-t border-gray-800 pt-8 text-center text-sm">
-            <p>&copy; 2026 CulinaryMaster. All rights reserved. | Privacy Policy | Terms of Service</p>
-        </div>
-    </div>
-
+</x-layouts::app>
 </footer> 
